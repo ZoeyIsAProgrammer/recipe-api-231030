@@ -1,0 +1,6 @@
+# `__pycache__/` matches a folder, `__pycache__` matches both folder and file
+__pycache__/
+db.sqlite3
+*.pyc
+doodle*
+venv/

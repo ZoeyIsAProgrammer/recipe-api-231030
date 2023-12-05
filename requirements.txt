@@ -1,0 +1,7 @@
+Django
+djangorestframework
+djangorestframework-simplejwt
+freezegun
+flake8
+Pillow
+psycopg2-binary

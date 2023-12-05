@@ -1,0 +1,11 @@
+[flake8]
+exclude =
+  migrations,
+  __pycache__,
+  settings.py,
+  manage.py
+;   recipe/views.py
+;   users\models.py
+;   users\serializers.py
+max-line-length = 88
+ignore = E711, F401

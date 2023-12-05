@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    ports:
+      - 127.0.0.1:8001:8000
+    volumes:
+      - ./app:/app
+    command: sleep infinity
+    depends_on:
+      - db
+
+  db:
+    image: postgres:alpine3.18
+    volumes:
+      - recipe-api-231030:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=recipe_api
+      - POSTGRES_USER=recipe_api_user
+      - POSTGRES_PASSWORD=secret
+
+volumes:
+  recipe-api-231030:
