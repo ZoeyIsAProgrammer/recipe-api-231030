@@ -4,3 +4,5 @@ db.sqlite3
 *.pyc
 doodle*
 venv/
+postgres.yaml
+recipe-api.yaml

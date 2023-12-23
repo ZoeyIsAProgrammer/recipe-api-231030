@@ -26,6 +26,7 @@ SECRET_KEY = "django-insecure-6#m_p#l-(bmk5d#4g1_!=sxon%ev1f(7#_6nh#m4-9v0*e(y3c
 DEBUG = True
 
 ALLOWED_HOSTS = ["testserver", "localhost", "127.0.0.1"]
+# for k8s, you need to add "*" to ALLOWED_HOSTS.
 
 
 # Application definition
@@ -78,10 +79,23 @@ WSGI_APPLICATION = "app.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# for local use
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
+# for use in Docker with Postgres configured
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "recipe_api",
+        "USER": "recipe_api_user",
+        "PASSWORD": "secret",
+        "HOST": "db",
+        "PORT": '5432'
     }
 }
 
