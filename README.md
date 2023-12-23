@@ -23,3 +23,6 @@ Or for locally running, you can start a venv on top of the requirements.txt file
 ```
 python manage.py runserver
 ```
+
+## Bug of this project
+For tests in the 'test_recipe_api.py' file in app recipe, when I run them locally on Windows with sqlite3 as the DB, all pass. And in Docker with a postgres container as the DB, when I test the file wholly, some errors and failures appear, but when I run every test solely, every test passes. Also when I use Postman to manually test every function, all is fine.

@@ -4,4 +4,4 @@ djangorestframework-simplejwt
 freezegun
 flake8
 Pillow
-psycopg2-binary
+psycopg2-binary  # for running locally on Windows, comment out this one
