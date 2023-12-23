@@ -18,8 +18,11 @@ docker compose up
 
 The API will then be available at [http://127.0.0.1:8001](http://127.0.0.1:8001).
 
-Or for locally running, you can start a venv on top of the requirements.txt file, then run this app with:
+Or for locally running, you can start a venv on top of the requirements.txt file, then do:
 
 ```
+python manage.py wait_for_db &&
+python manage.py migrate &&
 python manage.py runserver
 ```
+The API will then be available at [http://127.0.0.1:8000](http://127.0.0.1:8000)
